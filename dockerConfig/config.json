@@ -1,7 +1,7 @@
 {
         "network-configs": {
-                "test_net_test": {
-                        "name": "test_net_test",
+                "fabric_test": {
+                        "name": "fabric_test",
                         "profile": "./connection-profile/test-network.json"
 
                 }

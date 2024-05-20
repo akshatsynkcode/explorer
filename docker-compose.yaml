@@ -7,9 +7,9 @@ volumes:
   walletstore:
 
 networks:
-  amit.com:
-    external:
-      name: test_net_test
+  fabric_test:
+    external: 
+      name: fabric_test
 
 services:
 
@@ -29,7 +29,7 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
     networks:
-      -  amit.com
+      -  fabric_test
 
   explorer.amit.com:
     image:  hyperledger/explorer:latest
@@ -56,4 +56,4 @@ services:
       explorerdb.amit.com:
         condition: service_healthy
     networks:
-      -  amit.com
+      -  fabric_test
