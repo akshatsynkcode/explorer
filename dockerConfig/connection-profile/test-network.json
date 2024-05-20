@@ -1,0 +1,50 @@
+{
+	"name": "test_net_test",
+	"version": "1.0.0",
+	"client": {
+		"tlsEnable": true,
+		"adminCredential": {
+			"id": "exploreradmin",
+			"password": "exploreradminpw"
+		},
+		"enableAuthentication": true,
+		"organization": "Org1MSP",
+		"connection": {
+			"timeout": {
+				"peer": {
+					"endorser": "300"
+				},
+				"orderer": "300"
+			}
+		}
+	},
+	"channels": {
+		"mychannel": {
+			"peers": {
+				"peer0.org1.amit.com": {}
+			}
+		}
+	},
+	"organizations": {
+		"Org1MSP": {
+			"mspid": "Org1MSP",
+			"adminPrivateKey": {
+				"path": "/tmp/crypto-config/8ead8235b94088cd37dd04b36ea7cb1493a5156a89e38b934873906897ed2604_sk"
+			},
+			"peers": ["peer0.org1.amit.com"],
+			"signedCert": {
+				"path": "/tmp/crypto-config/cert.pem"
+			}
+		}
+		
+	},
+	"peers": {
+		"peer0.org1.amit.com": {
+			"tlsCACerts": {
+				"path": "/tmp/crypto-config/ca.crt"
+			},
+			"url": "grpcs://peer0.org1.amit.com:7051"
+		}
+	}
+}
+
